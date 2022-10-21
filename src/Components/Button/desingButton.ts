@@ -1,5 +1,4 @@
 export const desingButton = (desing: string, disabled?: boolean) => {
-  console.log(disabled);
   switch (desing) {
     case "grey1":
       return {
