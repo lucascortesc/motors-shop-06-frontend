@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyle =  createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
 *{
     margin: 0;
     padding: 0;
@@ -153,11 +153,10 @@ body{
 
 .button_big-text{
     font-weight: 600;
-    font-size: 16px;
 }
 .button_medium-text{
     font-weight: 600;
-    font-size: 14px;
+
 }
 .input-placeholder{
     font-weight: 400;
@@ -169,4 +168,4 @@ body{
     line-height: 16.94px;
 }
 
-`
+`;
