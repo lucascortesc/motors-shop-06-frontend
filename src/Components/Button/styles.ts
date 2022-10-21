@@ -8,7 +8,8 @@ interface Props {
 export const StyledButton = styled.button<Props>`
   width: 119px;
   height: 38px;
-  padding: 12px 20px 12px 20px;
+  font-size: 14px;
+  /* padding: 12px 20px 12px 20px; */
   border: 1.5px solid;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0);
@@ -27,5 +28,6 @@ export const StyledButton = styled.button<Props>`
   @media screen and (min-width: 768px) {
     width: 146px;
     height: 48px;
+    font-size: 16px;
   }
 `;
