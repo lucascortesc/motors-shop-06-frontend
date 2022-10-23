@@ -1,11 +1,15 @@
 import { InputWrap } from "./styles";
-import { IChildren } from "../../interfaces/index";
+import { FieldError, UseFormRegisterReturn } from "react-hook-form";
+import { InputHTMLAttributes, useState } from "react";
 
-interface Props {
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
   placeholder?: string;
   type?: string;
   width?: string;
+  defaultValue?: string;
+  register: UseFormRegisterReturn;
+  error: FieldError | undefined;
 }
 
 export const Input: React.FC<Props> = ({
@@ -13,11 +17,22 @@ export const Input: React.FC<Props> = ({
   type = "text",
   placeholder,
   width = "default",
+  defaultValue,
+  register,
+  error,
 }) => {
+  const [value, setValue] = useState<string>(defaultValue ? defaultValue : "");
+
   return (
     <InputWrap type={type} width={width}>
       <label className="inputWrap__label">{label}</label>
-      <input className="inputWrap__input" placeholder={placeholder}></input>
+      <input
+        className={error ? "inputWrap__input error" : "inputWrap__input"}
+        placeholder={placeholder}
+        value={value}
+        {...register}
+        onChange={(e) => setValue(e.target.value)}
+      />
     </InputWrap>
   );
 };

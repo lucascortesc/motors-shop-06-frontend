@@ -51,4 +51,8 @@ export const InputWrap = styled.div<Props>`
       background-color: var(--grey8);
     }
   }
+
+  .error {
+    border-color: red;
+  }
 `;
