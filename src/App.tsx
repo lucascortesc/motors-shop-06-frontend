@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "./Components/Button";
+import { Input } from "./Components/Input";
 import { Modal } from "./Components/Modal";
 
 function App() {
@@ -15,7 +16,13 @@ function App() {
       </Button>
       {openModal && (
         <Modal setOpenModal={setOpenModal} title={"Criar anuncio"}>
-          Modal Body
+          <Input label={"Label"} placeholder={"Placeholder"} />
+          <Input label={"Label"} placeholder={"Placeholder"} width={"small"} />
+          <Input
+            label={"Label"}
+            placeholder={"Placeholder"}
+            type={"textArea"}
+          />
         </Modal>
       )}
     </div>
