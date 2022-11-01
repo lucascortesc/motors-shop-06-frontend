@@ -29,12 +29,12 @@ export const ProductCard: React.FC<IPropsProductCard> = (props) => {
       <Figure>
         <img src={carImage} alt={carTitle} />
       </Figure>
-      <Title>{carTitle}</Title>
-      <Description>{carDescription}</Description>
+      <Title className="heading-7-500">{carTitle}</Title>
+      <Description className="body-2-400">{carDescription}</Description>
       <CardFooter>
         <ContainerTags>
-          <Button>{carKm} KM</Button>
-          <Button>{carYear}</Button>
+          <Button className="body-2-500">{carKm} KM</Button>
+          <Button className="body-2-500">{carYear}</Button>
         </ContainerTags>
         <Price>
           R${" "}

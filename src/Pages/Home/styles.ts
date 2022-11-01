@@ -20,6 +20,9 @@ export const MainHeader = styled.div`
 
   .mainHeader__title {
     color: var(--grey10);
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
   }
 
   .mainHeader__body {
@@ -37,30 +40,51 @@ export const MainHeader = styled.div`
     justify-content: center;
     gap: 21px;
     margin-top: 48px;
+    margin-bottom: 105px;
   }
 
   @media screen and (min-width: 768px) {
     .mainHeader__container {
       margin-top: 80px;
     }
+
     .mainHeader__button {
       max-width: 177px;
+    }
+
+    .mainHeader__title {
+      font-weight: 700;
+      font-size: 44px;
+      line-height: 56px;
     }
   }
 `;
 
 export const Announcements = styled.div`
-  margin-left: 60px;
+  margin-left: 13px;
 
   overflow-x: auto;
-
-  .announcements__title {
-    margin-top: 100px;
-    margin-bottom: 63px;
-  }
+  overflow-y: hidden;
+  padding-bottom: 15px;
 
   .announcements__container {
     display: flex;
     gap: 48px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-left: 60px;
+  }
+`;
+
+export const AnnouncementTitle = styled.h2`
+  margin-top: 38px;
+  margin-bottom: 37px;
+  margin-left: 13px;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 60px;
+    margin-top: 100px;
+    margin-bottom: 63px;
   }
 `;

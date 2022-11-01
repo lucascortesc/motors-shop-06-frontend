@@ -37,7 +37,7 @@ export const CreateAnnouncement: React.FC<Props> = ({ setOpenModal }) => {
     formState: { errors },
   } = useForm<schemaProps>({
     resolver: yupResolver(createAnnouncementSchema),
-    mode: "onSubmit",
+    mode: "onChange",
     context: { imgQuantity: imgQuantity },
   });
 

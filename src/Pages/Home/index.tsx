@@ -1,10 +1,10 @@
 import { Button } from "../../Components/Button";
 import { ProductCard } from "../../Components/ProductCard";
 import { useAnnouncements } from "../../Providers/Announcement";
-import { Announcements, MainHeader } from "./styles";
+import { Announcements, AnnouncementTitle, MainHeader } from "./styles";
 
 export const Home = () => {
-  const { announcements, cars, motorCycles } = useAnnouncements();
+  const { cars, motorCycles } = useAnnouncements();
 
   return (
     <>
@@ -38,40 +38,58 @@ export const Home = () => {
           </div>
         </div>
       </MainHeader>
+      <AnnouncementTitle
+        className="heading-5-600 announcements__title"
+        id="cars"
+      >
+        Carros
+      </AnnouncementTitle>
       <Announcements>
-        <h2 className="heading-5-600 announcements__title">Carros</h2>
         <div className="announcements__container">
-          {cars.map((announcement) => {
-            return (
-              <ProductCard
-                key={announcement.id}
-                carTitle={announcement.title}
-                carDescription={announcement.description}
-                carPrice={announcement.price}
-                carKm={announcement.km}
-                carYear={announcement.year}
-                carImage={announcement.images[0].img_url}
-              />
-            );
-          })}
+          {cars.length > 0 ? (
+            cars.map((announcement) => {
+              return (
+                <ProductCard
+                  key={announcement.id}
+                  carTitle={announcement.title}
+                  carDescription={announcement.description}
+                  carPrice={announcement.price}
+                  carKm={announcement.km}
+                  carYear={announcement.year}
+                  carImage={announcement.images[0].img_url}
+                />
+              );
+            })
+          ) : (
+            <h3>Estamos sem anúncios no momento"</h3>
+          )}
         </div>
       </Announcements>
+      <AnnouncementTitle
+        className="heading-5-600 announcements__title"
+        id="motorCycles"
+      >
+        Motos
+      </AnnouncementTitle>
       <Announcements>
-        <h2 className="heading-5-600 announcements__title">Motos</h2>
         <div className="announcements__container">
-          {motorCycles.map((announcement) => {
-            return (
-              <ProductCard
-                key={announcement.id}
-                carTitle={announcement.title}
-                carDescription={announcement.description}
-                carPrice={announcement.price}
-                carKm={announcement.km}
-                carYear={announcement.year}
-                carImage={announcement.images[0].img_url}
-              />
-            );
-          })}
+          {motorCycles.length > 0 ? (
+            motorCycles.map((announcement) => {
+              return (
+                <ProductCard
+                  key={announcement.id}
+                  carTitle={announcement.title}
+                  carDescription={announcement.description}
+                  carPrice={announcement.price}
+                  carKm={announcement.km}
+                  carYear={announcement.year}
+                  carImage={announcement.images[0].img_url}
+                />
+              );
+            })
+          ) : (
+            <h3>Estamos sem anúncios no momento"</h3>
+          )}
         </div>
       </Announcements>
     </>

@@ -8,6 +8,17 @@ export const GlobalStyle = createGlobalStyle`
     outline: 0;
 }
 
+&::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 8px;
+    height: 8px;
+    border-radius: 10px;
+    background: var(--grey5);
+  }
 
 
 :root{
