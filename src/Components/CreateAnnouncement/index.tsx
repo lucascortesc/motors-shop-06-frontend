@@ -7,6 +7,8 @@ import * as yup from "yup";
 import { StyledForm } from "./styles";
 import { Input } from "../Input";
 import { createAnnouncementSchema } from "../../Validation";
+import { IAnnouncementRequest, IImages } from "../../interfaces";
+import { useAnnouncements } from "../../Providers/Announcement";
 
 interface Props {
   setOpenModal: (arg: boolean) => void;
@@ -18,14 +20,16 @@ interface schemaProps {
   km: number;
   price: number;
   description: string;
-  imgFront: string;
+  imgFront?: string;
   [value: string]: any;
 }
 
 export const CreateAnnouncement: React.FC<Props> = ({ setOpenModal }) => {
-  const [announcementType, setAnnouncementType] = useState<String>("sell");
-  const [vehicleType, setVehicleType] = useState<String>("car");
+  const [announcementType, setAnnouncementType] = useState<string>("sell");
+  const [vehicleType, setVehicleType] = useState<string>("car");
   const [imgQuantity, setImgQuantity] = useState<number[]>([1]);
+
+  const { createAnnouncement } = useAnnouncements();
 
   const {
     register,
@@ -55,9 +59,36 @@ export const CreateAnnouncement: React.FC<Props> = ({ setOpenModal }) => {
     }
   };
 
+  const handleCreateAnnouncement = (data: schemaProps) => {
+    const imgFront: string = data.imgFront ? data.imgFront : "";
+
+    const images: IImages[] = [
+      { img_url: imgFront },
+      ...imgQuantity.map((position: number) => {
+        const img = data[`img${position}`];
+        delete data[`img${position}`];
+        return {
+          img_url: img as string,
+        };
+      }),
+    ];
+
+    delete data.imgFront;
+
+    const newAnnouncement: IAnnouncementRequest = {
+      ...data,
+      ad_type: announcementType,
+      vehicle_type: vehicleType,
+      published: true,
+      images: images,
+    };
+
+    createAnnouncement(newAnnouncement, setOpenModal);
+  };
+
   return (
     <Modal title="Criar anuncio" setOpenModal={setOpenModal}>
-      <StyledForm onSubmit={handleSubmit((data) => console.log(data))}>
+      <StyledForm onSubmit={handleSubmit(handleCreateAnnouncement)}>
         <p className="body-2-500 button__types">Tipo de anuncio</p>
         <div className="button__wrap">
           <Button
