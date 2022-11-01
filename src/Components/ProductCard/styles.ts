@@ -6,7 +6,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: var(--grey6);
+  /* background-color: var(--grey6); */
 `;
 
 export const Title = styled.h3`
