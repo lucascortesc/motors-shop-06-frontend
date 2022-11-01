@@ -6,7 +6,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: var(--grey6);
+  /* background-color: var(--grey6); */
 `;
 
 export const Title = styled.h3`
@@ -36,12 +36,11 @@ export const Figure = styled.figure`
     width: 220px;
   }
   width: 100%;
-  /* background-color: var(--grey7); */
+  background-color: var(--grey7);
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-
 
 export const ContainerTags = styled.div`
   display: flex;
@@ -54,9 +53,9 @@ export const Button = styled.button`
   margin: 2px;
   padding: 8px 2px;
   width: 80px;
-  background-color: #EDEAFD;
+  background-color: #edeafd;
   border: none;
-  color: #4529E6;
+  color: #4529e6;
   font-weight: 500;
   font-size: 14px;
 `;

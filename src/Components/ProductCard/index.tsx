@@ -10,8 +10,7 @@ import {
   Button,
 } from "./styles";
 
-
-interface IPropsProductCard{
+interface IPropsProductCard {
   carTitle: string;
   carDescription: string;
   carPrice: number;
@@ -22,14 +21,8 @@ interface IPropsProductCard{
 }
 
 export const ProductCard: React.FC<IPropsProductCard> = (props) => {
-  const {
-    carDescription,
-    carKm,
-    carTitle,
-    carPrice,
-    carYear,
-    carImage,
-  } = props;
+  const { carDescription, carKm, carTitle, carPrice, carYear, carImage } =
+    props;
 
   return (
     <Container>
@@ -40,14 +33,16 @@ export const ProductCard: React.FC<IPropsProductCard> = (props) => {
       <Description>{carDescription}</Description>
       <CardFooter>
         <ContainerTags>
-          <Button>
-            {carKm} KM
-          </Button>
-          <Button>
-            {carYear}
-          </Button>
+          <Button>{carKm} KM</Button>
+          <Button>{carYear}</Button>
         </ContainerTags>
-        <Price>R$ {carPrice},00</Price>
+        <Price>
+          R${" "}
+          {carPrice.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          })}
+        </Price>
       </CardFooter>
     </Container>
   );
