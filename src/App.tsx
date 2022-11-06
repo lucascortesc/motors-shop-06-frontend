@@ -1,9 +1,9 @@
-import { Header } from "./Components/Header";
+import VehicleDetails from "./Pages/Product";
 
 function App() {
   return (
     <div className="App">
-      <Header/>
+      <VehicleDetails/>
     </div>
   );
 }
