@@ -8,29 +8,23 @@ export const GlobalStyle = createGlobalStyle`
     outline: 0;
 }
 
-* {
-    scrollbar-width: none;
-    scrollbar-color: #696783 var(--grey8);
-}
 
-*::-webkit-scrollbar {
-    width: 15px;
-}
+&::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
 
-*::-webkit-scrollbar-track {
-    background: var(--grey8);
-}
-
-*::-webkit-scrollbar-thumb {
-    background-color: var(--grey3);
+  &::-webkit-scrollbar-thumb {
+    width: 8px;
+    height: 8px;
     border-radius: 10px;
-    border: 2px solid var(--grey8);
-}
+    background: var(--grey5);
+  }
+
 
 body{
     background-color: var(--grey8);
 }
-
 
 
 :root{

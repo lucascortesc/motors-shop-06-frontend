@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 250px;
-  height: 320px;
+  width: 312px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -33,15 +33,14 @@ export const Description = styled.p`
 export const Figure = styled.figure`
   img {
     height: 150px;
-    width: 220px;
+    width: 262px;
   }
-  width: 100%;
+  width: 312px;
   /* background-color: var(--grey7); */
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-
 
 export const ContainerTags = styled.div`
   display: flex;
@@ -52,13 +51,11 @@ export const ContainerTags = styled.div`
 
 export const Button = styled.button`
   margin: 2px;
-  padding: 8px 2px;
-  width: 80px;
-  background-color: #EDEAFD;
+  width: 51px;
+  height: 32px;
+  background-color: #edeafd;
   border: none;
-  color: #4529E6;
-  font-weight: 500;
-  font-size: 14px;
+  color: #4529e6;
 `;
 
 export const CardFooter = styled.div`
@@ -69,6 +66,7 @@ export const CardFooter = styled.div`
 `;
 
 export const Price = styled.span`
+  font-family: "Lexend";
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
