@@ -8,6 +8,29 @@ export const GlobalStyle = createGlobalStyle`
     outline: 0;
 }
 
+* {
+    scrollbar-width: none;
+    scrollbar-color: #696783 var(--grey8);
+}
+
+*::-webkit-scrollbar {
+    width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--grey8);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--grey3);
+    border-radius: 10px;
+    border: 2px solid var(--grey8);
+}
+
+body{
+    background-color: var(--grey8);
+}
+
 
 
 :root{
