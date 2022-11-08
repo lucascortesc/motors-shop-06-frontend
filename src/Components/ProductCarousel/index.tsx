@@ -1,8 +1,10 @@
 import { Button } from "../Button";
 import { ProductCard } from "../ProductCard";
 import { ButtonsProductCard, StyledCarousel } from "./styles";
-import { useState } from "react";
-import { IVehicle } from "../../interfaces";
+import { useState, useEffect } from "react";
+import { IAnnouncementRequest } from "../../interfaces";
+import axios from "axios";
+import { useAnnouncements } from "../../Providers/AdvertiserAds";
 
 interface CarouselProps {
   advertiser: boolean;
@@ -12,23 +14,27 @@ interface CarouselProps {
 export const ProductCarousel: React.FC<CarouselProps> = (
   props: CarouselProps
 ) => {
-  const [car, setCar] = useState<IVehicle[]>([]);
+  // const [car, setCar] = useState<IAnnouncementRequest[]>([]);
+
+  const { cars, announcements } = useAnnouncements();
+  if (cars.length > 0) {
+    console.log(cars);
+  }
 
   return (
     <StyledCarousel>
       <h3 className="heading-5-600">{props.name}</h3>
       <ul>
-        {car.map((item) =>
+        {cars.map((item, index) =>
           item.ad_type == "venda" ? (
-            <li>
+            <li key={index}>
               <ProductCard
                 carImage={item.images[0].img_url}
                 carTitle={item.title}
                 carDescription={item.description}
                 carKm={Number(item.km)}
                 carYear={item.year}
-                carPrice={parseFloat(item.price)}
-                key={item.id}
+                carPrice={item.price}
               />
               {props.advertiser ? (
                 <ButtonsProductCard>

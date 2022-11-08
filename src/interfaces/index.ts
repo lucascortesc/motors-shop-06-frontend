@@ -10,18 +10,21 @@ export interface IImages {
   img_url: string;
 }
 
-export interface IVehicle {
-  id: string;
-  title: string;
-  description: string;
+export interface IAnnouncementRequest {
   ad_type: string;
-  price: string;
-  km: string;
-  vehicle_type: string;
+  title: string;
   year: number;
-  images: IImages[];
+  km: number;
+  price: number;
+  description: string;
+  vehicle_type: string;
   published: boolean;
-  is_active: boolean;
+  images: IImages[];
+}
+
+export interface IAnnouncement extends IAnnouncementRequest {
+  id: string;
   is_sold: boolean;
-  created_at: Date;
+  is_active: boolean;
+  created_at: Date | string;
 }
