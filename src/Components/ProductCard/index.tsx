@@ -17,7 +17,6 @@ interface IPropsProductCard {
   carKm: number;
   carYear: number;
   carImage: string;
-  [props: string]: any;
 }
 
 export const ProductCard: React.FC<IPropsProductCard> = (props) => {

@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     outline: 0;
 }
 
+
 &::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -19,6 +20,11 @@ export const GlobalStyle = createGlobalStyle`
     border-radius: 10px;
     background: var(--grey5);
   }
+
+
+body{
+    background-color: var(--grey8);
+}
 
 
 :root{
