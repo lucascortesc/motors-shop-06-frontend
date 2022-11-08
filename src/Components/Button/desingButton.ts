@@ -47,7 +47,7 @@ export const desingButton = (desing: string, disabled?: boolean) => {
         hoverBackgroundColor: "--whiteFixed",
         hoverColor: "--grey1",
       };
-    case "outine1":
+    case "outline1":
       return {
         backgroundColor: "--whiteFixed",
         borderColor: "--grey0",
