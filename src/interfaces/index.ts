@@ -4,9 +4,7 @@ export interface IChildren {
   children: ReactNode;
 }
 
-
 export interface IImages {
-  id: string;
   img_url: string;
 }
 
